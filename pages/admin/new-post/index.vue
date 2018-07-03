@@ -8,7 +8,7 @@
           <AppControlInput v-model="editedPost.thumbnailLink">Thumbnail Link</AppControlInput>
           <AppControlInput control-type="textarea" v-model="editedPost.content">Content</AppControlInput>
           <AppButton type="submit">Save</AppButton>
-          <AppButton type="button" @click="onClick">Cancel</AppButton>
+          <AppButton type="button" @click="onCancel">Cancel</AppButton>
         </div>
       </form>
     </section>
@@ -36,6 +36,8 @@ export default {
     },
     onCancel () {
       // Navigate Back
+
+      this.$router.push('/admin')
     }
   }
 }

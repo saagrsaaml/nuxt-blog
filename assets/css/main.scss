@@ -119,3 +119,8 @@ a.nav-item:hover, a.nav-item:active, a.nav-item:link, a.nav-item:visited {
 .footer a.nav-item {
   color: #9a9a9a;
 }
+
+
+.navbar a.nuxt-link-active {
+  color: $primary;
+}

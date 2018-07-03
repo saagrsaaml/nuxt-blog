@@ -3,12 +3,18 @@
     <section class="new-post">
       <button>Create Post</button>
     </section>
+    <section class="exiting-posts">
+      <h1>Existing Posts</h1>
+      <PostList />
+    </section>
   </div>
 </template>
 
 <script>
+import PostList from "~/components/Posts/PostList";
 export default {
-  name: "index"
+  name: "index",
+  components: {PostList}
 }
 </script>
 

@@ -1,13 +1,18 @@
 <template>
   <div class="home-page">
-
-    <!-- header titles -->
-    <div class="header-title">
-      <section class="hero is-medium has-text-centered">
-        <div class="hero-body">
-          <div class="container">
-            <h1 class="title is-1">Get the latest tech news</h1>
-            <h3 class="subtitle is-3">Something Important</h3>
+    <div class="header-wrapper">
+      <section class="hero-top">
+        <div class="header">
+          <!-- header titles -->
+          <div class="header-title">
+            <section class="hero is-medium has-text-centered">
+              <div class="hero-body">
+                <div class="container">
+                  <h1 class="title is-1">Get the latest tech news</h1>
+                  <h3 class="subtitle is-3">Something Important</h3>
+                </div>
+              </div>
+            </section>
           </div>
         </div>
       </section>

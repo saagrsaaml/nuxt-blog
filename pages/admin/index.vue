@@ -1,9 +1,17 @@
 <template>
   <div class="admin-page">
-    <section class="new-post" type="link">
-      <button class="button is-danger is-large" @click="$router.push('/admin/new-post')">
-        Create post
-      </button>
+    <section class="new-post">
+      <section class="hero">
+        <div class="hero-body">
+          <div class="has-text-centered">
+            <figure class="center">
+              <button class="button is-danger is-large" @click="$router.push('/admin/new-post')">
+                Create post
+              </button>
+            </figure>
+          </div>
+        </div>
+      </section>
     </section>
     <section class="exiting-posts">
       <h1>Existing Posts</h1>

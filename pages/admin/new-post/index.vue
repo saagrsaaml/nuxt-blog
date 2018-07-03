@@ -33,6 +33,7 @@ export default {
   methods: {
     onSave () {
       // Save the post
+      console.log(this.editedPost)
     },
     onCancel () {
       // Navigate Back

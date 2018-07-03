@@ -1,5 +1,7 @@
 <template>
+  <div class="new-post">
 
+  </div>
 </template>
 
 <script>

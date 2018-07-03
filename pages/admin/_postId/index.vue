@@ -1,5 +1,7 @@
 <template>
+  <div class="single-post">
 
+  </div>
 </template>
 
 <script>

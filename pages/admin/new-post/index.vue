@@ -1,13 +1,44 @@
 <template>
-  <div class="new-post">
-
+  <div class="admin-new-post">
+    <section class="new-post-form">
+      <form @submit.prevent="onSave">
+        <div class="field is-vertical">
+          <AppControlInput v-model="editedPost.author">Author Name</AppControlInput>
+          <AppControlInput v-model="editedPost.title">Title</AppControlInput>
+          <AppControlInput v-model="editedPost.thumbnailLink">Thumbnail Link</AppControlInput>
+          <AppControlInput control-type="textarea" v-model="editedPost.content">Content</AppControlInput>
+          <AppButton type="submit">Save</AppButton>
+          <AppButton type="button" @click="onClick">Cancel</AppButton>
+        </div>
+      </form>
+    </section>
   </div>
 </template>
 
 <script>
-    export default {
-        name: "index"
+import AppControlInput from "~/components/UI/AppControlInput";
+export default {
+  name: "index",
+  components: {AppControlInput},
+  data() {
+    return {
+      editedPost: {
+        author: '',
+        title: '',
+        thumbnailLink: '',
+        content: ''
+      }
     }
+  },
+  methods: {
+    onSave () {
+      // Save the post
+    },
+    onCancel () {
+      // Navigate Back
+    }
+  }
+}
 </script>
 
 <style scoped>

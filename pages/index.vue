@@ -19,58 +19,34 @@
       <div class="container">
         <div class="columns is-centered is-multiline has-text-centered">
           <div class="column is-6">
-            <div class="post">
-              <!-- post content -->
-              <div class="content">
-                <div class="content-header">
-                  <h3 class="title is-3"><b><nuxt-link :to="'/posts/' + 1"><a>Magicians are Crazy</a></nuxt-link></b></h3>
-                  <h4 class="title is-4 is-spaced">Some things are meant to suck the life out of you</h4>
-                  <h6 class="subtitle is-6">Posted by Author on April 7th 2017 at 9:33pm</h6>
-                  <hr/>
-                </div>
-              </div>
-              <!-- end of post content -->
-            </div>
 
+            <PostPreview
+              id="1"
+              thumbnail="https://thumbs.dreamstime.com/b/stack-fruits-container-116695868.jpg"
+              title="Magicians are Crazy"
+              previewText="Some things are meant to suck the life out of you"
+            />
 
-            <div class="post">
-              <!-- post content -->
-              <div class="content">
-                <div class="content-header">
-                  <h3 class="title is-3"><b><nuxt-link :to="'/posts/' + 2"><a>Crawling Over Sand</a></nuxt-link></b></h3>
-                  <h4 class="title is-4 is-spaced">Tricks to crawl correctly!</h4>
-                  <h6 class="subtitle is-6">Posted by Author on April 2nd 2017 at 10:41am</h6>
-                  <hr/>
-                </div>
-              </div>
-              <!-- end of post content -->
-            </div>
+            <PostPreview
+              id="2"
+              thumbnail="https://thumbs.dreamstime.com/b/green-white-red-abstract-painting-116695780.jpg"
+              title="Crawling Over Sand"
+              previewText="Tricks to crawl correctly!"
+            />
 
-            <div class="post">
-              <!-- post content -->
-              <div class="content">
-                <div class="content-header">
-                  <h3 class="title is-3"><b><nuxt-link :to="'/posts/' + 3"><a>Old People Work Hard</a></nuxt-link></b></h3>
-                  <h4 class="title is-4 is-spaced">At least I believe they do</h4>
-                  <h6 class="subtitle is-6">Posted by Author on April 1st 2017 at 11:00pm</h6>
-                  <hr/>
-                </div>
-              </div>
-              <!-- end of post content -->
-            </div>
+            <PostPreview
+              id="3"
+              thumbnail="https://thumbs.dreamstime.com/b/woman-wearing-yellow-floral-top-116695890.jpg"
+              title="Old People Work Hard"
+              previewText="At least I believe they do"
+            />
 
-            <div class="post">
-              <!-- post content -->
-              <div class="content">
-                <div class="content-header">
-                  <h3 class="title is-3"><b><nuxt-link :to="'/posts/' + 4"><a>Apples Are Real</a></nuxt-link></b></h3>
-                  <h4 class="title is-4 is-spaced">Apples are born from apples</h4>
-                  <h6 class="subtitle is-6">Posted by Author on March 20th 2017 at 9:00am</h6>
-                  <hr/>
-                </div>
-              </div>
-              <!-- end of post content -->
-            </div>
+            <PostPreview
+              id="4"
+              thumbnail="https://thumbs.dreamstime.com/b/gray-foods-wicker-baskets-116695871.jpg"
+              title="Apples Are Real"
+              previewText="Apples are born from apples"
+            />
           </div>
         </div>
       </div>
@@ -80,10 +56,16 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
+import PostPreview from '~/components/Posts/PostPreview'
 
 export default {
+  validate (data) {
+    console.log(data)
+    return true
+  },
   components: {
-    Logo
+    Logo,
+    PostPreview
   }
 }
 </script>

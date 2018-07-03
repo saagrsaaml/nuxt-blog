@@ -1,6 +1,23 @@
 <template>
-  <section class="container">
-    <h1>Hello World</h1>
+  <section class="section has-background-light">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <article class="media notification is-info">
+            <figure class="media-left">
+            </figure>
+            <div class="media-content">
+              <div class="content">
+                <h1 class="title is-size-4">Nuxt-Blog</h1>
+                <p class="is-size-5">
+                  Blog app in nuxt using Bulma as a css framework. <span class="emoticon">ᕕ( ᐛ )ᕗ</span>
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
@@ -15,33 +32,4 @@ export default {
 </script>
 
 <style>
-.container
-{
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.title
-{
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-.subtitle
-{
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-.links
-{
-  padding-top: 15px;
-}
 </style>

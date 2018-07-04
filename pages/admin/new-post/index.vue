@@ -10,6 +10,7 @@
 import PostForm from "~/components/Admin/PostForm"
 export default {
   name: "index",
+  layout: 'admin',
   components: {PostForm}
 }
 </script>

@@ -30,6 +30,7 @@ import PostPreview from '~/components/Posts/PostPreview'
 import PostList from "~/components/Posts/PostList";
 
 export default {
+  name: 'index',
   validate (data) {
     console.log(data)
     return true

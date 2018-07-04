@@ -5,9 +5,9 @@
         <div class="hero-body">
           <div class="has-text-centered">
             <figure class="center">
-              <button class="button is-danger is-large" @click="$router.push('/admin/new-post')">
+              <AppButton btnStyle="button is-danger is-large" @click="$router.push('/admin/new-post')">
                 Create post
-              </button>
+              </AppButton>
             </figure>
           </div>
         </div>
@@ -15,16 +15,20 @@
     </section>
     <section class="exiting-posts">
       <h1>Existing Posts</h1>
-      <PostList isAdmin="true"/>
+      <PostList isAdmin/>
     </section>
   </div>
 </template>
 
 <script>
-import PostList from "~/components/Posts/PostList";
+import PostList from "~/components/Posts/PostList"
+import AppButton from "~/components/UI/AppButton"
 export default {
   name: "index",
-  components: {PostList}
+  components: {
+    PostList,
+    AppButton
+  }
 }
 </script>
 

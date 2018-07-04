@@ -13,6 +13,7 @@
 
 <script>
   import AppControlInput from "~/components/UI/AppControlInput";
+  import AppButton from '~/components/UI/AppButton'
   export default {
     name: "PostForm",
     props: {
@@ -21,7 +22,7 @@
         required: false
       }
     },
-    components: {AppControlInput},
+    components: {AppControlInput, AppButton},
     data() {
       return {
         editedPost: this.post  // check if post exists

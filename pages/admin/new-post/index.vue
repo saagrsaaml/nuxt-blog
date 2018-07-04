@@ -1,46 +1,16 @@
 <template>
   <div class="admin-new-post">
     <section class="new-post-form">
-      <form @submit.prevent="onSave">
-        <div class="field is-vertical">
-          <AppControlInput v-model="editedPost.author">Author Name</AppControlInput>
-          <AppControlInput v-model="editedPost.title">Title</AppControlInput>
-          <AppControlInput v-model="editedPost.thumbnailLink">Thumbnail Link</AppControlInput>
-          <AppControlInput control-type="textarea" v-model="editedPost.content">Content</AppControlInput>
-          <AppButton type="submit">Save</AppButton>
-          <AppButton type="button" @click="onCancel">Cancel</AppButton>
-        </div>
-      </form>
+      <PostForm />
     </section>
   </div>
 </template>
 
 <script>
-import AppControlInput from "~/components/UI/AppControlInput";
+import PostForm from "~/components/Admin/PostForm"
 export default {
   name: "index",
-  components: {AppControlInput},
-  data() {
-    return {
-      editedPost: {
-        author: '',
-        title: '',
-        thumbnailLink: '',
-        content: ''
-      }
-    }
-  },
-  methods: {
-    onSave () {
-      // Save the post
-      console.log(this.editedPost)
-    },
-    onCancel () {
-      // Navigate Back
-
-      this.$router.push('/admin')
-    }
-  }
+  components: {PostForm}
 }
 </script>
 

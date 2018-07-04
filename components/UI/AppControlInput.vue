@@ -8,7 +8,7 @@
           type="text"
           placeholder="Text input"
           v-bind="$attrs"
-          :vlaue="value"
+          :value="value"
           @input="$emit('input', $event.target.value)"
         >
       </div>

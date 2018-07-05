@@ -11,7 +11,7 @@
                 <div class="content-header has-text-centered">
                   <h3 class="title is-3"><b><a href="">{{ loadedPost.title }}</a></b></h3>
                   <h4 class="is-5 is-spaced">Some things are meant to suck the life out of you</h4>
-                  <h6 class="subtitle is-6">Posted by {{ loadedPost.author }} on {{ loadedPost.updateDate }}</h6>
+                  <h6 class="subtitle is-6">Posted by {{ loadedPost.author }} on {{ loadedPost.updatedDate }}</h6>
                   <hr/>
                 </div>
                 <p>{{ loadedPost.content }}</p>
@@ -32,22 +32,17 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: "index",
-  asyncData(context, callback) {
-    setTimeout(() => {
-      callback(null, {
-        loadedPost: {
-          id: '1',
-          thumbnail: "https://thumbs.dreamstime.com/b/woman-wearing-yellow-floral-top-116695890.jpg",
-          title: "Old People Work Hard (ID: " + context.route.params.id +")",
-          previewText: "At least I believe they do",
-          author: 'Sagar',
-          updateDate: new Date(),
-          content: 'Some dummy text'
-          }
+  asyncData(context) {
+    return axios.get('https://nuxt-blog-28ea5.firebaseio.com/posts/' + context.params.id + '.json')
+      .then(res => {
+        return {
+          loadedPost: res.data
+        }
       })
-    }, 1500)
+      .catch()
   }
 }
 </script>

@@ -8,7 +8,7 @@
             <PostPreview
               v-for="post of posts"
               :key="post.id"
-              :id="post.id"
+              :id=post.id
               :isAdmin="isAdmin"
               :thumbnail="post.thumbnail"
               :title="post.title"

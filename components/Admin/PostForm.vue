@@ -33,7 +33,7 @@
               title: '',
               thumbnail: '',
               content: '',
-              previewText: ''
+              previewText: '',
             }
       }
     },

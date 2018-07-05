@@ -49,6 +49,7 @@ export default {
   },
   computed: {
     postLink() {
+      console.log(this.id)
       return this.isAdmin ? '/admin/' + this.id : '/posts/' + this.id
     }
   }

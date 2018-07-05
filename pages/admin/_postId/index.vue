@@ -8,19 +8,19 @@
 
 <script>
 import PostForm from "~/components/Admin/PostForm"
+import axios from 'axios'
 export default {
   name: "index",
   layout: 'admin',
   components: {PostForm},
-  data() {
-    return {
-      loadedPost: {
-        author: 'Sagar',
-        title: 'My new post',
-        thumbnailLink: 'https://thumbs.dreamstime.com/b/stack-fruits-container-116695868.jpg',
-        content: 'Some things are meant to suck the life out of you'
-      }
-    }
+  asyncData(context) {
+    return axios.get('https://nuxt-blog-28ea5.firebaseio.com/posts/' + context.params.id + '.json')
+      .then(res => {
+        return {
+          loadedPost: res.data
+        }
+      })
+      .catch()
   }
 }
 </script>

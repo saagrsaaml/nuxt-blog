@@ -15,7 +15,7 @@ const createStore = () =>{
       },
       editPost(state, editedPost) {
         const postIndex = state.loadedPosts.findIndex(post => {
-          post.id === editedPost.id
+          return post.id === editedPost.id
         })
         state.loadedPosts[postIndex] = editedPost
       }
@@ -41,7 +41,13 @@ const createStore = () =>{
           })
           .catch(e => console.log(e))
       },
-      editPost(vuexContext, editedPost) {}
+      editPost(vuexContext, editedPost) {
+        return axios.put('https://nuxt-blog-28ea5.firebaseio.com/posts/' + editedPost.id+ '.json', editedPost)
+          .then(res => {
+            vuexContext.commit('editPost', editedPost)
+          })
+          .catch(e => console.log(e))
+      }
     },
     getters: {
       loadedPosts(state) {

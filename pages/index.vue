@@ -36,41 +36,6 @@ export default {
   //      loadedPosts: []
   //   }
   // },
-  fetch(context) {
-    if (context.store.state.loadedPosts.length > 0) {
-      return null
-    }
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve({
-          loadedPosts: [
-            {
-              id: '1',
-              thumbnail: "https://thumbs.dreamstime.com/b/woman-wearing-yellow-floral-top-116695890.jpg",
-              title: "Old People Work Hard",
-              previewText: "At least I believe they do"
-            },
-            {
-              id: '2',
-              thumbnail: "https://thumbs.dreamstime.com/b/green-white-red-abstract-painting-116695780.jpg",
-              title: "Crawling Over Sand",
-              previewText: "ricks to crawl correctly!"
-            },
-            {
-              id: '3',
-              thumbnail: "https://thumbs.dreamstime.com/b/woman-wearing-yellow-floral-top-116695890.jpg",
-              title: "Apples Are Real",
-              previewText: "Apples are born from apples"
-            }
-          ]
-        })
-      }, 1500)
-    }).then(data => {
-      context.store.commit('setPosts', data.loadedPosts)
-    }).catch(e => {
-      context.error(e)
-    })
-  },
   components: {
     PostList,
     Logo,

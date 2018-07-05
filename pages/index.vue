@@ -37,6 +37,9 @@ export default {
   //   }
   // },
   fetch(context) {
+    if (context.store.state.loadedPosts.length > 0) {
+      return null
+    }
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve({

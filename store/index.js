@@ -11,7 +11,11 @@ const createStore = () =>{
       }
     },
     actions: {
+      // runs on server exactly once if we load the page for the first time
       nuxtServerInit(vuexContext, context) {
+        if(!process.client) {
+          console.log(context.req)
+        }
         return new Promise((resolve, reject) => {
           setTimeout(() => {
             vuexContext.commit('setPosts', [

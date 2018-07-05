@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import PostForm from "~/components/Admin/PostForm"
 export default {
   name: "index",
@@ -14,7 +15,9 @@ export default {
   components: {PostForm},
   methods: {
     onSubmitted(postData) {
-      
+      axios.post('https://nuxt-blog-28ea5.firebaseio.com/posts.json', postData)
+        .then(result => console.log(result))
+        .catch(e => console.log(e))
     }
   }
 }

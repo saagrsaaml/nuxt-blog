@@ -124,3 +124,13 @@ a.nav-item:hover, a.nav-item:active, a.nav-item:link, a.nav-item:visited {
 .navbar a.nuxt-link-active {
   color: $primary;
 }
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+
+.fade-enter, .fade-leave-to { // .fade-leave-active below version 2.1.8
+  opacity: 0;
+}
+
+

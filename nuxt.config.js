@@ -92,5 +92,9 @@ module.exports = {
         component: resolve(__dirname, 'pages/index.vue')
       })
     }
+  },
+  transition: {
+    name: 'fade',
+    mode: 'out-in'
   }
 }

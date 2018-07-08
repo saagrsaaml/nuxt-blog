@@ -1,7 +1,7 @@
 const pkg = require('./package')
 
 module.exports = {
-  mode: 'universal',
+  mode: 'spa',
 
   /*
   ** Headers of the page
@@ -23,6 +23,10 @@ module.exports = {
   ** Customize the progress-bar color
   */
   loading: { color: '#00d1b2', height: '4px', duration: 5000 },
+  loadingIndicator: {
+    name: 'circle',
+    color: '#00d1b2'
+  },
 
   /*
   ** Global CSS

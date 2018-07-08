@@ -43,6 +43,9 @@ export default {
         }
       })
       .catch()
+  },
+  head: {
+    title: 'A Blog Post'
   }
 }
 </script>

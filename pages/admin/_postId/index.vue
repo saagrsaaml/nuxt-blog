@@ -8,16 +8,15 @@
 
 <script>
 import PostForm from "~/components/Admin/PostForm"
-import axios from 'axios'
 export default {
   name: "index",
   layout: 'admin',
   components: {PostForm},
   asyncData(context) {
-    return axios.get(process.env.baseUrl +'/posts/' + context.params.postId + '.json')
-      .then(res => {
+    return context.app.$axios.$get('/posts/' + context.params.postId + '.json')
+      .then(data => {
         return {
-          loadedPost: { ...res.data, id: context.params.postId }
+          loadedPost: { ...data, id: context.params.postId }
         }
       })
       .catch(e => context.error())

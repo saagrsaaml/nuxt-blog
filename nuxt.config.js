@@ -48,16 +48,14 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
   ],
-  /*
-  ** Axios module configuration
-  */
-  axios: {
-    // See https://github.com/nuxt-community/axios-module#options
-  },
 
+  axios: {
+    // proxyHeaders: false
+    baseURL:  process.env.BASE_URL || 'https://nuxt-blog-28ea5.firebaseio.com',
+    credentials: false
+  },
   /*
   ** Build configuration
   */

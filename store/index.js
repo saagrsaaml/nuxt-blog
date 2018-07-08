@@ -23,7 +23,7 @@ const createStore = () =>{
     actions: {
       // runs on server exactly once if we load the page for the first time
       nuxtServerInit(vuexContext, context) {
-        return axios.get('https://nuxt-blog-28ea5.firebaseio.com/posts.json')
+        return axios.get(process.env.baseUrl + '/posts.json')
           .then(res => {
             const postArray = []
             for (const key in res.data) {
@@ -35,14 +35,14 @@ const createStore = () =>{
       },
       addPost(vuexContext, postData) {
         const createdPost = {...postData, updatedDate: new Date()}
-        return axios.post('https://nuxt-blog-28ea5.firebaseio.com/posts.json', createdPost)
+        return axios.post(process.env.baseUrl +'/posts.json', createdPost)
           .then(res => {
             vuexContext.commit('addPost', { ...createdPost, id: res.data.name })
           })
           .catch(e => console.log(e))
       },
       editPost(vuexContext, editedPost) {
-        return axios.put('https://nuxt-blog-28ea5.firebaseio.com/posts/' + editedPost.id+ '.json', editedPost)
+        return axios.put(process.env.baseUrl +'/posts/' + editedPost.id+ '.json', editedPost)
           .then(res => {
             vuexContext.commit('editPost', editedPost)
           })

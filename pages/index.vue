@@ -27,7 +27,6 @@
 <script>
 import Logo from '~/components/Logo.vue'
 import PostPreview from '~/components/Posts/PostPreview'
-import PostList from "~/components/Posts/PostList";
 
 export default {
   name: 'index',
@@ -37,7 +36,6 @@ export default {
   //   }
   // },
   components: {
-    PostList,
     Logo,
     PostPreview
   },

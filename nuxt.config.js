@@ -85,6 +85,7 @@ module.exports = {
     baseUrl: process.env.BASE_URL || 'https://nuxt-blog-28ea5.firebaseio.com'
   },
   router: {
+    middleware: 'log',
     base:'',
     extendRoutes(routes, resolve) {
       routes.push({

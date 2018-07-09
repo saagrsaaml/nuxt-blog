@@ -8,6 +8,7 @@
   import TheNavBar from '@/components/Navigation/TheNavBar'
 
   export default {
+    middleware: 'log',
     components: {
       TheNavBar
     }

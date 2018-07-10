@@ -11,6 +11,7 @@ import PostForm from "~/components/Admin/PostForm"
 export default {
   name: "index",
   layout: 'admin',
+  middleware: 'auth',
   components: {PostForm},
   asyncData(context) {
     return context.app.$axios.$get('/posts/' + context.params.postId + '.json')

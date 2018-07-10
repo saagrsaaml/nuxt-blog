@@ -21,6 +21,9 @@ const createStore = () =>{
       },
       setToken(state, token) {
         state.token = token
+      },
+      clearToken(state) {
+        state.token = null
       }
     },
     actions: {
@@ -62,7 +65,13 @@ const createStore = () =>{
           returnSecureToken: true
         }).then(result => {
           vuexContext.commit('setToken', result.idToken)
+          vuexContext.commit('setLogoutTimer', result.expiresIn * 1000)
         }).catch(e => console.error(e))
+      },
+      setLogoutTimer(vuexContext, duration) {
+        setTimeout(() => {
+          vuexContext.commit('clearToken')
+        }, duration)
       }
     },
     getters: {

@@ -8,6 +8,9 @@
               <AppButton btnStyle="button is-danger is-large" @click="$router.push('/admin/new-post')">
                 Create post
               </AppButton>
+              <AppButton btnStyle="button is-info is-large" @click="onLogout">
+                Logout
+              </AppButton>
             </figure>
           </div>
         </div>
@@ -28,6 +31,12 @@ export default {
   computed: {
     loadedPosts() {
       return this.$store.getters.loadedPosts
+    }
+  },
+  methods:{
+    onLogout() {
+      this.$store.dispatch('logout')
+      this.$router.push('admin/auth')
     }
   }
 }

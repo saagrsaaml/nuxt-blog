@@ -12,7 +12,7 @@ import PostForm from "~/components/Admin/PostForm"
 export default {
   name: "index",
   layout: 'admin',
-  middleware: ['auth'],
+  middleware: ['check-auth','auth'],
   components: {PostForm},
   methods: {
     onSubmitted(postData) {

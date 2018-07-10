@@ -11,9 +11,9 @@
                 <figure class="avatar">
                   <img src="https://placehold.it/128x128">
                 </figure>
-                <form>
-                  <AppControlInput type="email">E-Mail Address</AppControlInput>
-                  <AppControlInput type="password">Password</AppControlInput>
+                <form @submit.prevent="onSubmit">
+                  <AppControlInput type="email" v-model="email">E-Mail Address</AppControlInput>
+                  <AppControlInput type="password" v-model="password">Password</AppControlInput>
                   <AppButton type="submit">{{ isLogin ? 'Login' : 'Sign Up' }}</AppButton>
                   <AppButton type="button" @click="isLogin =! isLogin">Switch to {{ isLogin ? 'Sign Up' : 'Login' }}</AppButton>
                 </form>
@@ -37,7 +37,20 @@ export default {
   layout: 'admin',
   data() {
     return {
-      isLogin: true
+      isLogin: true,
+      email: '',
+      password: ''
+    }
+  },
+  methods: {
+    onSubmit() {
+      this.$axios.$post('https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=' + process.env.fbAPIKey,{
+        email: this.email,
+        password: this.password,
+        returnSecureToken: true
+      }).then(result => {
+        console.warn(result)
+      }).catch(e => console.error(e))
     }
   }
 }

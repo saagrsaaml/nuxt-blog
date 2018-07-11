@@ -30,6 +30,7 @@ const createStore = () =>{
     actions: {
       // runs on server exactly once if we load the page for the first time
       nuxtServerInit(vuexContext, context) {
+        console.log("-------------rendering in server------------------")
         return context.app.$axios.$get('/posts.json')
           .then(data => {
             const postArray = []

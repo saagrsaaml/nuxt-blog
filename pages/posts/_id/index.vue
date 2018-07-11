@@ -35,6 +35,12 @@
 export default {
   name: "index",
   asyncData(context) {
+    // had only in static page generate command
+    if(context.payload){
+      return {
+        loadedPost: context.payload.postData
+      }
+    }
     return context.app.$axios.$get('/posts/' + context.params.id + '.json')
       .then(data => {
         return {
